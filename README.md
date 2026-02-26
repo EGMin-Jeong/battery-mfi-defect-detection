@@ -39,8 +39,6 @@ We create multiple training sets by combining these operations:
 - **MIX-RI:** apply RI on top of Mix-up images (MIX + RI).
 - **ORIG:** original dataset without augmentation.
 
-> Note: the poster also reports that Mix-up–augmented training generally improves accuracy (up to ~11%) versus non-Mix-up settings.
-
 ### Method overview figure
 <img width="1596" height="898" alt="overview" src="https://github.com/user-attachments/assets/3a23a7a7-1a73-4753-9c40-ff200bec3eed" />
 
