@@ -27,7 +27,7 @@ Led end-to-end execution: augmentation design, model benchmarking (DT/LR/LogR/RF
 3) Train classical classifiers  
 4) Evaluate with Accuracy/AUC and select the best setting
 
-### Augmentations (what each dataset name means)
+### Augmentations
 We create multiple training sets by combining these operations:
 
 - **R (Rotation):** rotate in **0.2° increments from -1° to 1°** to mitigate scan-angle variation.
