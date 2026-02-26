@@ -50,7 +50,7 @@ We create multiple training sets by combining these operations:
 
 *Accuracy/AUC across augmentation sets (ORIG, RI, SYN, SYN-RI, MIX, MIX-RI) and classical classifiers (DT, kNN, LR, LogR, RF, SVM).*
 
-### Key results (copy-paste friendly)
+### Key results
 - **Data scaling:** **16 images → 39,168 images** via augmentation.
 - **Average improvement with RI:** baseline (ORIG) **90.78% Acc / 0.90 AUC** → **97.77% Acc / 0.99 AUC** when RI is incorporated across datasets (avg over 3 experiments).
 - **Best setting:** **SVM on RI** achieves **100.0% accuracy / 1.00 AUC**.
