@@ -11,12 +11,11 @@ Research project delivering an **end-to-end pipeline for automatic battery defec
 We propose an automated battery defect detection method by training ML classifiers on **augmented MFI images** (rotation, inversion, synthesis, mix-up), then benchmarking multiple models to find the most suitable detector.
 
 ## My role
-- Led end-to-end research execution: augmentation design, model benchmarking (DT/LR/LogR/RF/SVM/kNN), and evaluation/reporting for poster/paper deliverables.
+- Led end-to-end research execution: augmentation design, model benchmarking (Decision Tree/Linear Regression/Logistic Regression/Random Forest/SVM/kNN), and evaluation/reporting for poster/paper deliverables.
 
 ## Key result
 - Expanded an original dataset of **16 images (8 normal / 8 defective)** up to **39,168 images** via augmentation. :contentReference
 - Across 3 runs, baseline achieved **90.78% accuracy / 0.90 AUC**, while incorporating **Rotation+Inversion (RI)** improved to **97.77% accuracy / 0.99 AUC**.
-- On the RI dataset, **SVM reached 100.0% accuracy / 1.00 AUC** (best-performing setting).
 ---
 
 ## Method (Augmentations)
@@ -30,8 +29,22 @@ We propose an automated battery defect detection method by training ML classifie
 ---
 
 ## Demo / Results
-![Results](assets/results_overview.png)
-*Augmentation + classifier benchmarking for defect detection; RI improves performance and SVM achieves the best AUC and perfect accuracy in the best setting.* 
+<img width="527" height="548" alt="results_overview" src="https://github.com/user-attachments/assets/8f3a5933-3066-499b-9017-b6cccd060102" />
+
+*Accuracy/AUC across augmentation sets (ORIG, RI, SYN, SYN-RI, MIX, MIX-RI) and classical classifiers (DT, kNN, LR, LogR, RF, SVM).*
+
+**Key takeaways (60-sec scan):**
+- **RI (Rotation + Inversion)** is consistently strong across models, suggesting robustness to scan-angle/orientation nuisance factors.
+- **Best overall:** **SVM + RI** achieves **100.0% Acc / 1.00 AUC** (perfect separation in this setting).
+- **Runner-ups:**  
+  - **LR + RI:** **99.31% Acc / 1.00 AUC**  
+  - **kNN + RI:** **98.39% Acc / 0.98 AUC**  
+  - **RF + SYN-RI:** **98.85% Acc / 1.00 AUC**  
+  - **LogR + SYN-RI:** **97.24% Acc / 1.00 AUC**
+- **Model sensitivity:** Decision Tree shows unstable performance across augmentations, while margin/ensemble models (SVM/RF/LogR) remain strong, indicating the task benefits from more stable decision boundaries under augmented distributions.
+
+**Practical interpretation:**  
+A simple, reproducible pipeline—**data augmentation → benchmark classical models → choose the most stable high-AUC detector**—can deliver strong defect detection performance even under constrained MFI data collection.
 
 ---
 
