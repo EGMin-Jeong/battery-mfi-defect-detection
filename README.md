@@ -1,10 +1,9 @@
 # Battery MFI Defect Detection
-Research project delivering an **end-to-end pipeline for automatic battery defect diagnosis** from high-cost, low-throughput MFI data
+Research project delivering an **end-to-end pipeline for automatic battery defect diagnosis** from **high-cost, low-throughput MFI** data.
 
-**Goal:** Non-destructive battery defect detection using Magnetic Field Imaging (MFI) with a data augmentation + optimized classification pipeline.
+**Goal:** Non-destructive battery defect detection using Magnetic Field Imaging (MFI) with **data augmentation + optimized classification**.
 
-> In battery manufacturing, defects and degradation can cause safety incidents; MFI enables non-contact, in-situ diagnosis by measuring induced magnetic fields (x/y/z). Because MFI data acquisition is time-intensive, we use data augmentation to expand limited datasets and train an automated defect detector.
-
+> MFI enables non-contact, in-situ diagnosis by measuring induced magnetic fields (x/y/z). Since acquiring MFI images is time-intensive, we use augmentation to expand limited data and train an automated defect detector.
 ---
 
 ## What
@@ -14,7 +13,7 @@ We propose an automated battery defect detection method by training ML classifie
 - Led end-to-end research execution: augmentation design, model benchmarking (Decision Tree/Linear Regression/Logistic Regression/Random Forest/SVM/kNN), and evaluation/reporting for poster/paper deliverables.
 
 ## Key result
-- Expanded an original dataset of **16 images (8 normal / 8 defective)** up to **39,168 images** via augmentation. :contentReference
+- Expanded an original dataset of **16 images (8 normal / 8 defective)** up to **39,168 images** via augmentation.
 - Across 3 runs, baseline achieved **90.78% accuracy / 0.90 AUC**, while incorporating **Rotation+Inversion (RI)** improved to **97.77% accuracy / 0.99 AUC**.
 ---
 
@@ -42,9 +41,6 @@ We propose an automated battery defect detection method by training ML classifie
   - **RF + SYN-RI:** **98.85% Acc / 1.00 AUC**  
   - **LogR + SYN-RI:** **97.24% Acc / 1.00 AUC**
 - **Model sensitivity:** Decision Tree shows unstable performance across augmentations, while margin/ensemble models (SVM/RF/LogR) remain strong, indicating the task benefits from more stable decision boundaries under augmented distributions.
-
-**Practical interpretation:**  
-A simple, reproducible pipeline—**data augmentation → benchmark classical models → choose the most stable high-AUC detector**—can deliver strong defect detection performance even under constrained MFI data collection.
 
 ---
 
