@@ -20,6 +20,7 @@ We propose an automated battery defect detection method by training ML classifie
 ---
 
 ## Method (Augmentations)
+<img width="1596" height="898" alt="overview" src="https://github.com/user-attachments/assets/3a23a7a7-1a73-4753-9c40-ff200bec3eed" />
 - **Rotation:** rotate images in **0.2° increments from -1° to 1°** to mitigate scan-angle variation.
 - **Inversion:** vertical/horizontal flips to reduce orientation sensitivity.
 - **Synthesis:** generate new images by averaging pixel values from two images.
